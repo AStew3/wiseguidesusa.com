@@ -1,0 +1,746 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wise Guides: step-by-step guides your team actually follows</title>
+<link rel="canonical" href="https://wiseguidesusa.com/">
+<meta property="og:url" content="https://wiseguidesusa.com/">
+<meta property="og:title" content="Wise Guides: Show it once. Everyone gets it right.">
+<meta property="og:description" content="Turn any process into step-by-step guides your team actually follows.">
+<meta property="og:image" content="https://wiseguidesusa.com/media/og.jpg">
+<meta name="theme-color" content="#13101F">
+<link rel="icon" href="/logo.svg">
+<meta name="description" content="Wise Guides turns how your team works into step-by-step guides with voice, Guide Me walk-throughs, sign-off and QR codes.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<style>
+/* Wise Guides marketing site. One deliberate light look: a dusk-to-white hero, near-black actions, brand violet accents. */
+:root {
+  --ink: #111018; --paper: #FFFFFF; --soft: #F5F3FB; --muted: #58556F; --rule: #E7E3F3;
+  --violet: #5B45E0; --violet-deep: #3A26B8; --dusk: #13101F; --lilac: #8C84C8; --gold: #FFB020; --gold-ink: #2A1D00;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 17px/1.6 "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif; }
+a { color: var(--violet); }
+img, video { max-width: 100%; display: block; }
+.wrap { width: min(1180px, 100% - 32px); margin: 0 auto; }
+.wrap.narrow { width: min(860px, 100% - 32px); }
+.skip { position: absolute; left: -999px; } .skip:focus { left: 16px; top: 16px; z-index: 99; background: var(--ink); color: #fff; padding: 8px 12px; border-radius: 6px; }
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+h1, h2, h3 { text-wrap: balance; letter-spacing: -.025em; }
+h2 { font-size: clamp(28px, 3.6vw, 40px); line-height: 1.12; margin: 0 0 12px; font-weight: 800; }
+h3 { font-size: 22px; line-height: 1.2; margin: 0 0 8px; font-weight: 800; }
+.muted { color: var(--muted); }
+.center { text-align: center; }
+.head { max-width: 760px; margin: 0 auto 48px; }
+.head p { color: var(--muted); font-size: 19px; margin: 0 auto; }
+
+/* Buttons: near-black primary, 6px radius */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 6px; font: 700 16px/1.2 "Plus Jakarta Sans", "Segoe UI", sans-serif; text-decoration: none; border: 2px solid transparent; cursor: pointer; }
+.btn.lg { padding: 15px 26px; font-size: 17px; }
+.btn.dark { background: var(--ink); color: #fff; }
+.btn.dark:hover { background: #2B2840; }
+.btn.light { background: #fff; color: var(--ink); border-color: var(--ink); }
+.btn.gold { background: var(--gold); color: var(--gold-ink); }
+.tag { display: inline-block; font-size: 13px; font-weight: 800; letter-spacing: .12em; padding: 6px 12px; border-radius: 4px; border: 1.5px solid currentColor; }
+.tag.gold { color: var(--gold); }
+
+/* Header */
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 30; background: var(--dusk); color: #fff; }
+.top .wrap { display: flex; align-items: center; gap: 26px; height: 64px; }
+.logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 20px; color: inherit; text-decoration: none; }
+.logo img { width: 34px; height: 34px; }
+.top nav { display: flex; gap: 22px; margin-left: auto; }
+.top nav a { color: #E6E2FF; text-decoration: none; font-weight: 600; font-size: 15px; }
+.top nav a:hover { color: #fff; }
+.top .btn.dark { background: #fff; color: var(--ink); padding: 9px 16px; }
+@media (max-width: 880px) { .top nav { display: none; } .top .btn { margin-left: auto; } }
+
+/* Hero */
+.hero { background: linear-gradient(180deg, var(--dusk) 0%, #2A1F63 30%, var(--lilac) 62%, var(--paper) 88%); color: #fff; padding-block: 64px 24px; }
+.hero-inner { text-align: center; display: grid; justify-items: center; gap: 18px; }
+.hero h1 { font-size: clamp(38px, 6.2vw, 74px); line-height: 1.02; margin: 4px 0 0; font-weight: 800; max-width: 14ch; }
+.hero h1 em { font-family: "Instrument Serif", Georgia, "Times New Roman", serif; font-style: italic; font-weight: 400; color: #D9D2FF; letter-spacing: -.01em; }
+.hero .lead { font-size: 20px; max-width: 640px; color: #E8E5FF; margin: 0; }
+.cta { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+.hero .btn.dark { background: #fff; color: var(--ink); }
+.hero .btn.light { background: transparent; color: #fff; border-color: rgba(255,255,255,.7); }
+.hero-video { width: 100%; max-width: 920px; margin-top: 26px; border-radius: 16px; aspect-ratio: 16 / 9; background: var(--dusk); box-shadow: 0 30px 80px rgba(8,6,20,.45); }
+.showcase { margin-top: 56px; background: var(--paper); color: var(--ink); border-radius: 18px; padding: 14px; box-shadow: 0 30px 80px rgba(19,16,31,.28); }
+.tabs { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; padding: 4px 4px 14px; }
+.tabs button { font: 700 15px/1 "Plus Jakarta Sans", sans-serif; padding: 10px 16px; border-radius: 999px; border: 1.5px solid var(--rule); background: var(--paper); color: var(--ink); cursor: pointer; }
+.tabs button[aria-selected="true"] { background: var(--ink); border-color: var(--ink); color: #fff; }
+.shot { margin: 0; }
+.shot img { border-radius: 12px; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; background: var(--soft); }
+.shot figcaption { text-align: center; color: var(--muted); font-size: 16px; padding: 14px 8px 4px; }
+
+/* Facts strip and black promo */
+.facts { border-bottom: 1px solid var(--rule); }
+.facts .wrap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; padding-block: 28px; }
+.facts span { color: var(--muted); font-size: 14px; display: grid; }
+.facts b { color: var(--ink); font-size: 17px; }
+@media (max-width: 860px) { .facts .wrap { grid-template-columns: 1fr 1fr; } }
+.promo { background: var(--ink); color: #fff; }
+.promo .wrap { display: flex; gap: 24px; align-items: center; justify-content: space-between; flex-wrap: wrap; padding-block: 38px; }
+.promo h2 { font-size: clamp(22px, 2.6vw, 30px); margin: 12px 0 0; max-width: 30ch; }
+
+/* Sticky section menu */
+.subnav { position: sticky; top: calc(64px + env(safe-area-inset-top, 0px)); z-index: 20; background: rgba(255,255,255,.94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--rule); }
+.subnav .wrap { display: flex; gap: 26px; overflow-x: auto; padding-block: 14px; }
+.subnav a { color: var(--ink); text-decoration: none; font-weight: 700; font-size: 15px; white-space: nowrap; }
+.subnav a:hover { color: var(--violet); }
+
+/* Sections */
+section { padding-block: 88px; scroll-margin-top: 120px; }
+section.soft { background: var(--soft); }
+.row { display: grid; grid-template-columns: 1fr 1.15fr; gap: 56px; align-items: center; margin-top: 56px; }
+.row.flip .copy { order: 2; }
+.kick { font-size: 13px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--violet); }
+.copy h3 { font-size: clamp(26px, 3vw, 34px); margin: 8px 0 12px; }
+.copy p { color: var(--muted); margin: 0 0 16px; max-width: 52ch; }
+.more { font-weight: 800; text-decoration: none; }
+.pic { border-radius: 16px; box-shadow: 0 20px 50px rgba(19,16,31,.16); width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
+@media (max-width: 900px) { .row, .split { grid-template-columns: 1fr !important; gap: 24px; } .row.flip .copy { order: 0; } }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; }
+.feat { background: var(--paper); border-radius: 12px; padding: 22px; border: 1px solid var(--rule); }
+.feat h3 { font-size: 19px; }
+.feat p { color: var(--muted); margin: 0; font-size: 16px; }
+video.tour { width: 100%; border-radius: 16px; aspect-ratio: 16 / 9; background: var(--dusk); box-shadow: 0 30px 70px rgba(19,16,31,.2); }
+.split { display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; align-items: center; }
+ol.steps { counter-reset: s; list-style: none; padding: 0; margin: 26px 0 0; display: grid; gap: 16px; }
+ol.steps li { counter-increment: s; position: relative; padding-left: 54px; min-height: 36px; color: var(--muted); }
+ol.steps li::before { content: counter(s); position: absolute; left: 0; top: 0; width: 36px; height: 36px; border-radius: 50%; background: var(--ink); color: #fff; display: grid; place-items: center; font-weight: 800; }
+ol.steps b { color: var(--ink); }
+.aud { background: var(--paper); border: 1px solid var(--rule); border-radius: 18px; padding: 18px; }
+.aud-body { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; padding: 18px 12px 8px; align-items: center; }
+.aud-body h3 { font-size: 28px; }
+.aud-body p { color: var(--muted); margin: 0 0 12px; }
+.aud-body ul { margin: 0; padding-left: 20px; color: var(--muted); display: grid; gap: 6px; }
+@media (max-width: 800px) { .aud-body { grid-template-columns: 1fr; } }
+.uses { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.uses span { padding: 12px 18px; border-radius: 999px; background: var(--paper); border: 1px solid var(--rule); font-weight: 700; }
+.price-note { margin: 0; color: #E8E5FF; font-size: 15px; }
+.trial { text-align: center; background: var(--soft); border: 1px dashed var(--lilac); border-radius: 12px; padding: 14px 18px; margin: 0 auto 22px; max-width: 760px; }
+.bill { display: flex; width: max-content; max-width: 100%; margin: 0 auto 28px; border: 1.5px solid var(--ink); border-radius: 999px; padding: 4px; gap: 4px; }
+.bill button { border: 0; background: transparent; padding: 9px 18px; border-radius: 999px; font: 700 15px/1 "Plus Jakarta Sans", sans-serif; cursor: pointer; color: var(--ink); }
+.bill button[aria-pressed="true"] { background: var(--ink); color: #fff; }
+.bill span { font-size: 12px; color: var(--violet); margin-left: 4px; }
+.bill button[aria-pressed="true"] span { color: var(--gold); }
+.plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: 16px; align-items: start; }
+.plan, .plan li > span { min-width: 0; overflow-wrap: anywhere; }
+.plan { position: relative; border: 1.5px solid var(--rule); border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 8px; background: var(--paper); }
+.plan.pop { border-color: var(--ink); box-shadow: 0 16px 40px rgba(19,16,31,.12); }
+.plan .badge { position: absolute; top: -12px; left: 22px; background: var(--gold); color: var(--gold-ink); font-size: 12px; font-weight: 800; padding: 4px 10px; border-radius: 4px; }
+.plan h3 { margin: 0; }
+.plan .price { font-size: 38px; font-weight: 800; letter-spacing: -.03em; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.plan .price small { font-size: 14px; font-weight: 600; color: var(--muted); letter-spacing: 0; }
+.plan .per { color: var(--muted); font-size: 14px; margin: 0; }
+.plan .blurb { color: var(--muted); margin: 4px 0; font-size: 15px; }
+.plan ul { list-style: none; margin: 8px 0 14px; padding: 0; display: grid; gap: 7px; font-size: 14.5px; }
+.plan li { display: grid; grid-template-columns: 18px 1fr; gap: 8px; }
+.plan li::before { content: "✓"; color: #1F7A45; font-weight: 800; }
+.plan li.soon { color: var(--muted); }
+.plan li.soon::before { content: "○"; color: var(--lilac); }
+.plan li .soon-tag { display: block; width: max-content; max-width: 100%; margin-top: 3px; }
+.soon-tag { display: inline-block; font-size: 11px; font-weight: 800; padding: 1px 7px; border-radius: 4px; background: #FFF1D6; color: #7A5000; white-space: nowrap; }
+.plan .btn { margin-top: auto; }
+.fine { text-align: center; color: var(--muted); font-size: 14px; margin: 22px auto 0; max-width: 760px; }
+details { border-bottom: 1px solid var(--rule); padding: 18px 4px; }
+details summary { font-weight: 800; cursor: pointer; font-size: 18px; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+details summary::after { content: "+"; font-size: 24px; line-height: 1; color: var(--violet); }
+details[open] summary::after { content: "−"; }
+details p { color: var(--muted); margin: 10px 0 0; }
+
+/* Demo form */
+.demo { background: var(--dusk); color: #fff; }
+.demo .wrap { display: grid; grid-template-columns: 1fr 1.1fr; gap: 48px; align-items: start; }
+.demo h2 { font-size: clamp(30px, 4vw, 44px); margin-top: 16px; }
+.demo .lead { color: #DAD6F5; font-size: 19px; }
+.demo ul { color: #DAD6F5; padding-left: 20px; }
+.demo form { background: var(--paper); color: var(--ink); border-radius: 16px; padding: 26px; display: grid; gap: 14px; grid-template-columns: 1fr 1fr; }
+.demo label { display: grid; gap: 6px; font-weight: 700; font-size: 14px; }
+.demo .full { grid-column: 1 / -1; }
+.demo input, .demo select, .demo textarea { width: 100%; padding: 12px 14px; border-radius: 6px; border: 1.5px solid #CFCAE3; background: #fff; color: var(--ink); font: inherit; font-size: 16px; }
+.demo .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.demo .msg { grid-column: 1 / -1; margin: 0; font-weight: 700; min-height: 1.4em; }
+.demo .msg.ok { color: #1F7A45; } .demo .msg.err { color: #B42318; }
+@media (max-width: 900px) { .demo .wrap { grid-template-columns: 1fr; } .demo form { grid-template-columns: 1fr; } }
+
+/* Ticker + footer */
+.ticker { background: var(--gold); color: var(--gold-ink); overflow: hidden; padding-block: 14px; }
+.ticker .track { display: flex; gap: 48px; width: max-content; animation: tick 40s linear infinite; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.ticker span::after { content: "✦"; margin-left: 48px; }
+@keyframes tick { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .ticker .track { animation: none; } html { scroll-behavior: auto; } }
+footer { background: var(--ink); color: #BDB8D8; padding-block: 34px; font-size: 15px; }
+footer .wrap { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+footer .logo { color: #fff; }
+footer nav { display: flex; gap: 18px; flex-wrap: wrap; }
+footer a { color: #E6E2FF; }
+
+/* Legal pages */
+.legal { padding-block: 56px 80px; }
+.legal .wrap { max-width: 820px; }
+.legal h1 { font-size: 44px; }
+.legal h2 { font-size: 24px; margin-top: 34px; }
+.legal p, .legal li { color: var(--muted); }
+
+/* Prepared request (shared page: the visitor sends it from their own email) */
+.sent { grid-column: 1 / -1; display: grid; gap: 10px; background: var(--soft); border-radius: 12px; padding: 16px; }
+.sent pre { margin: 0; white-space: pre-wrap; font: 14px/1.5 "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif; color: var(--ink); background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 12px 14px; max-height: 260px; overflow: auto; }
+.sent .row2 { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.sent .addr { font-weight: 800; user-select: all; }
+
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap">
+  <a class="logo" href="#main"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiB2aWV3Qm94PSIwIDAgMTI4IDEyOCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJXaXNlIEd1aWRlcyI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9IndnLWJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjN0I1Q0ZGIi8+PHN0b3Agb2Zmc2V0PSIuNTUiIHN0b3AtY29sb3I9IiM0QjJGRDYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMyMzE0NkUiLz48L2xpbmVhckdyYWRpZW50PgogICAgPHJhZGlhbEdyYWRpZW50IGlkPSJ3Zy1zaGluZSIgY3g9Ii4yNSIgY3k9Ii4xNSIgcj0iLjgiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2ZmZiIgc3RvcC1vcGFjaXR5PSIuMjgiLz48c3RvcCBvZmZzZXQ9Ii42IiBzdG9wLWNvbG9yPSIjZmZmIiBzdG9wLW9wYWNpdHk9IjAiLz48L3JhZGlhbEdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJ3Zy1nb2xkIiB4MT0iMCIgeTE9IjAiIHgyPSIwIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjRkZFMDhBIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjRkZCMDIwIi8+PC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3QgeD0iNCIgeT0iNCIgd2lkdGg9IjEyMCIgaGVpZ2h0PSIxMjAiIHJ4PSIzMiIgZmlsbD0idXJsKCN3Zy1iZykiLz4KICA8cmVjdCB4PSI0IiB5PSI0IiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgcng9IjMyIiBmaWxsPSJ1cmwoI3dnLXNoaW5lKSIvPgogIDxwYXRoIGQ9Ik0yNCA0NiBMNDIgOTQgTDY0IDU4IEw4NiA5NCBMOTguNiA1My41IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMTUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgogIDxwYXRoIGQ9Ik0xMDYuNSAyOSBMMTEyLjYgNTUuOCBMODYuNiA0Ny42IFoiIGZpbGw9IiNmZmYiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CiAgPHBhdGggZD0iTTY0IDE4IEM2NS41IDI3IDY3IDI4LjUgNzYgMzAgQzY3IDMxLjUgNjUuNSAzMyA2NCA0MiBDNjIuNSAzMyA2MSAzMS41IDUyIDMwIEM2MSAyOC41IDYyLjUgMjcgNjQgMTggWiIgZmlsbD0idXJsKCN3Zy1nb2xkKSIvPgo8L3N2Zz4K" alt="">Wise Guides</a>
+  <nav aria-label="Main"><a href="#how">How it works</a><a href="#features">Features</a><a href="#uses">Use cases</a><a href="#plans">Pricing</a><a href="#faq">FAQs</a></nav>
+  <a class="btn dark" href="#demo">Book a demo</a>
+</div></header>
+
+<main id="main">
+<!-- Hero: dark-to-light gradient, one italic accent word, product showcase with tabs. -->
+<section class="hero">
+  <div class="wrap hero-inner">
+    <span class="tag">WISE GUIDES</span>
+    <h1>Show it once.<br>Get a step-by-step guide in <em>minutes.</em></h1>
+    <p class="lead">Record a task, drop in a document, or fill in a form, and Wise Guides turns it into a clear, illustrated guide with voice, live walk-throughs and sign-off. No manual writing.</p>
+    <div class="cta"><a class="btn dark lg" href="#demo">Start your free month</a><a class="btn light lg" href="#tour">▶ Watch the full tour</a></div>
+    <p class="price-note">From <b>$5.99 per seat</b> a month · web capture free for your first month · no minimum seats</p>
+    <video class="hero-video" src="media/wise-guides-launch.mp4" poster="media/launch-poster.jpg" controls playsinline preload="metadata" aria-label="Wise Guides in about a minute"></video>
+  </div>
+  <div class="wrap">
+    <div class="showcase" id="showcase">
+      <div class="tabs" role="tablist" aria-label="What you can do">
+        <button role="tab" aria-selected="true" data-shot="record" id="tab-record">Record</button>
+        <button role="tab" aria-selected="false" data-shot="import" id="tab-import">Import documents</button>
+        <button role="tab" aria-selected="false" data-shot="livefill" id="tab-livefill">Live fill</button>
+        <button role="tab" aria-selected="false" data-shot="guideme" id="tab-guideme">Guide Me</button>
+        <button role="tab" aria-selected="false" data-shot="voice" id="tab-voice">Voice &amp; share</button>
+        <button role="tab" aria-selected="false" data-shot="team" id="tab-team">Team sign-off</button>
+      </div>
+      <figure class="shot">
+        <img id="shotImg" src="media/shots/record.jpg" alt="Recording a task: each click becomes a numbered step" width="1920" height="1080">
+        <figcaption id="shotCap">Do the task once. Every click becomes a numbered step with a screenshot and the exact button highlighted.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Trust strip: facts, not ratings. -->
+<div class="facts"><div class="wrap">
+  <span><b>Your own server</b>Each customer runs a private instance</span>
+  <span><b>English &amp; Korean</b>Voices and document translation</span>
+  <span><b>10+ ways to share</b>PDF, Word, PowerPoint, Excel, video, QR</span>
+  <span><b>HTTPS &amp; daily backups</b>Built in, nothing to set up</span>
+</div></div>
+
+<!-- Black promo banner -->
+<div class="promo"><div class="wrap">
+  <div><span class="tag gold">LIVE DEMO</span><h2>Bring a document. We'll turn it into a guide while you watch.</h2></div>
+  <a class="btn gold lg" href="#demo">Book your demo</a>
+</div></div>
+
+<!-- Sticky section menu -->
+<nav class="subnav" aria-label="On this page"><div class="wrap">
+  <a href="#how">How it works</a><a href="#features">Features</a><a href="#steps">Getting started</a><a href="#audience">Who it's for</a><a href="#faq">FAQs</a>
+</div></nav>
+
+<section id="how"><div class="wrap">
+  <div class="head center"><h2>From “how do I…?” to done, without writing a manual</h2><p>Start from whatever you already have: the task itself, the documents you use, or the form you fill in every week.</p></div>
+  <div class="row">
+    <div class="copy"><span class="kick">Record</span><h3>Skip the blank page</h3><p>Open the side panel in your browser, press Start Capture and do the task once. Every click becomes a numbered step with a screenshot, and emails, phone numbers and card numbers are blurred before anything is saved.</p><a class="more" href="#demo">See it on your own process →</a></div>
+    <img class="pic" src="media/shots/record.jpg" alt="Steps appearing as a task is recorded" width="1920" height="1080">
+  </div>
+  <div class="row flip">
+    <div class="copy"><span class="kick">Import</span><h3>Your documents, rebuilt as guides</h3><p>Drop in Word, PDF, PowerPoint, Excel or photos of a printed procedure. Wise Guides builds the steps, keeps every picture on the right step, and can turn Korean documents into English.</p><a class="more" href="#demo">Bring one to your demo →</a></div>
+    <img class="pic" src="media/shots/import.jpg" alt="Documents turning into a step-by-step guide" width="1920" height="1080">
+  </div>
+  <div class="row">
+    <div class="copy"><span class="kick">Guide Me</span><h3>Learn by doing, on the real page</h3><p>Guide Me walks people through the task inside the real web app, highlighting each button and moving on as they go. Guides can also talk, in natural voices, in English or Korean.</p><a class="more" href="#tour">Watch it in the tour →</a></div>
+    <img class="pic" src="media/shots/guideme.jpg" alt="Guide Me highlighting the next field on a web form" width="1920" height="1080">
+  </div>
+</div></section>
+
+<section class="soft" id="features"><div class="wrap">
+  <div class="head center"><h2>Everything your team needs to get it right</h2><p>Built for the people who follow procedures, and the people responsible for them.</p></div>
+  <div class="grid">
+    <div class="feat"><h3>Review before sharing</h3><p>A reviewer approves each guide before your team sees it. Every change is kept in an audit trail.</p></div>
+    <div class="feat"><h3>Read &amp; sign</h3><p>People confirm they've read a procedure; download the sign-off records for training and audits.</p></div>
+    <div class="feat"><h3>Tasks with due dates</h3><p>Assign guides and see who's finished, which guides are used, and which are found helpful.</p></div>
+    <div class="feat"><h3>Live fill for forms</h3><p>Field-by-field guidance writes itself while a form or online document is filled in.</p></div>
+    <div class="feat"><h3>QR codes on equipment</h3><p>Print a label for a machine or panel; scanning it opens the right procedure on a phone.</p></div>
+    <div class="feat"><h3>Share anywhere</h3><p>PDF, Word, PowerPoint, Excel, video, web page, private link, email or text message.</p></div>
+    <div class="feat"><h3>Private by default</h3><p>Recording only starts when you press Start, never on sites you exclude, with personal details blurred.</p></div>
+    <div class="feat"><h3>Help that searches</h3><p>A built-in help center answers “how do I…?” in plain words and walks you through it.</p></div>
+  </div>
+  <div class="head center" style="margin-top:48px"><h2>For multi-site and regulated operations</h2><p>Business and Enterprise plans add the controls that plants, utilities and field-service teams ask for.</p></div>
+  <div class="grid">
+    <div class="feat"><h3>Desktop apps, not just the browser</h3><p>Capture SCADA and HMI screens, ERP clients and engineering tools step by step, with the click highlighted.</p></div>
+    <div class="feat"><h3>Regions, sites and teams</h3><p>Organize people and guides by site, give site leads their own admin rights, and compare sites side by side.</p></div>
+    <div class="feat"><h3>Your commissioning workflow</h3><p>Multi-stage approvals, such as technician, site lead, then quality, with a different approver at each stage.</p></div>
+    <div class="feat"><h3>Offline in the field</h3><p>Save guides to a phone or tablet and follow them with pictures and voice where there's no signal.</p></div>
+    <div class="feat"><h3>Connected to your systems</h3><p>Slack and Teams alerts, webhooks and an API, plus ready-made SAP, Maximo and Ignition connectors: work orders and alarms become tasks.</p></div>
+    <div class="feat"><h3>Vendor automation</h3><p>New contractor technicians get the site induction automatically; an alarm assigns the right procedure.</p></div>
+    <div class="feat"><h3>Compliance tracking</h3><p>Map guides to ISO 9001/45001, NERC CIP, OSHA or FDA 21 CFR requirements and see who needs to re-sign.</p></div>
+    <div class="feat"><h3>Security and governance</h3><p>Single sign-on, restricted sites, a full audit trail, retention rules, encrypted files and backups, and automatic failover to a second site.</p></div>
+  </div>
+  <div class="center" style="margin-top:36px"><a class="btn dark lg" href="#demo">Book a demo</a></div>
+</div></section>
+
+<section id="tour"><div class="wrap">
+  <div class="head center"><h2>See every feature in under 3 minutes</h2></div>
+  <video class="tour" src="media/wise-guides-demo.mp4" poster="media/demo-poster.jpg" controls playsinline preload="metadata" aria-label="Wise Guides product tour (2 minutes 48 seconds)"></video>
+</div></section>
+
+<section class="soft" id="steps"><div class="wrap split">
+  <div>
+    <h2>How to create a guide</h2>
+    <p class="muted">Whether it's onboarding, commissioning a site, or closing the books, the path is the same.</p>
+    <ol class="steps">
+      <li><b>Add the browser extension.</b> Authors install it for Chrome or Edge in a minute. Learners need nothing.</li>
+      <li><b>Capture the process.</b> Record the task, import a document, or use live fill on a form.</li>
+      <li><b>Polish the draft.</b> Reword a step, add a tip or safety warning, mark up a picture.</li>
+      <li><b>Review and publish.</b> A reviewer approves it, and your team can use it right away.</li>
+      <li><b>Share and assign.</b> Send a link, export it, print a QR label, or assign it as a task.</li>
+      <li><b>Track who's ready.</b> See views, sign-offs and finished tasks in one place.</li>
+    </ol>
+  </div>
+  <img class="pic" src="media/shots/team.jpg" alt="Manager dashboard with sign-offs and tasks" width="1920" height="1080">
+</div></section>
+
+<section id="audience"><div class="wrap">
+  <div class="head center"><h2>Built for everyone who shows others how</h2></div>
+  <div class="aud">
+    <div class="tabs" role="tablist" aria-label="Who it's for">
+      <button role="tab" aria-selected="true" data-aud="0" id="aud-0">Managers</button>
+      <button role="tab" aria-selected="false" data-aud="1" id="aud-1">Trainers</button>
+      <button role="tab" aria-selected="false" data-aud="2" id="aud-2">Field teams</button>
+      <button role="tab" aria-selected="false" data-aud="3" id="aud-3">IT &amp; operations</button>
+    </div>
+    <div class="aud-body" id="audBody"></div>
+  </div>
+</div></section>
+
+<section class="soft" id="uses"><div class="wrap">
+  <div class="head center"><h2>If it's done twice, it deserves a Wise Guide</h2></div>
+  <div class="uses">
+    <span>Onboarding</span><span>Field service</span><span>Commissioning</span><span>Manufacturing</span><span>Quality checks</span><span>Healthcare admin</span>
+    <span>Finance</span><span>Customer support</span><span>IT &amp; software</span><span>Compliance</span><span>Retail &amp; restaurants</span><span>Logistics</span>
+  </div>
+</div></section>
+
+<section id="plans"><div class="wrap">
+  <div class="head center"><h2>Simple per-seat pricing</h2><p>No minimum seats. Monthly or annual billing. Cancel anytime.</p></div>
+  <div class="trial"><b>Web capture is free for your first month.</b> Start capturing today; choose a plan when you're ready.</div>
+  <div class="bill" role="group" aria-label="Billing period"><button type="button" id="bill-m" aria-pressed="true">Monthly</button><button type="button" id="bill-a" aria-pressed="false">Annual <span>save 20%</span></button></div>
+  <div class="plans" id="pricing" aria-live="polite"></div>
+  <p class="fine">Prices in USD per seat per month, before tax. Volume pricing available for Team (20+ seats) and Business (50+ seats).</p>
+</div></section>
+
+<section class="soft" id="faq"><div class="wrap narrow">
+  <div class="head center"><h2>Wise Guides FAQ</h2></div>
+  <details><summary>What do my people need to install?</summary><p>Nothing for learners: guides open in any browser, on a computer or phone. Authors add the Wise Guides browser extension for Chrome or Edge to record tasks and use Guide Me.</p></details>
+  <details><summary>Where is our data kept?</summary><p>In your own Wise Guides instance, on your servers or hosted for you, separate from every other customer. It's backed up daily, and you can copy the backups wherever you like.</p></details>
+  <details><summary>Can we use the documents we already have?</summary><p>Yes. Import Word, PDF, PowerPoint and Excel files or photos of printed procedures, and Wise Guides turns them into step-by-step guides with the pictures in the right places.</p></details>
+  <details><summary>Does it work in Korean?</summary><p>Yes. Guides can be read aloud in Korean, and Korean documents can be turned into English guides.</p></details>
+  <details><summary>Can guides be used on the shop floor or in the field?</summary><p>Yes. Guides open on phones, can be read aloud, and QR labels on equipment open the right procedure with one scan.</p></details>
+  <details><summary>How do reviews and approvals work?</summary><p>Authors send a draft for review; a reviewer approves it before anyone else sees it. Reviewers can't approve their own drafts, and every change is recorded.</p></details>
+  <details><summary>How long does it take to get started?</summary><p>You can record and publish your first guide on day one. We set up your instance and walk your team through it.</p></details>
+  <details><summary>How does pricing work?</summary><p>You pay per seat (each person who uses Wise Guides): Basic is $5.99, Team $9.99 and Business $14.99 per seat per month, and Enterprise is quoted. Annual billing saves 20%. There's no minimum number of seats, and you can cancel anytime.</p></details>
+  <details><summary>What's free in the first month?</summary><p>Web capture (recording tasks in your browser) is free for the first 30 days of a new workspace, so you can build your first guides before choosing a plan. Your guides stay available afterwards.</p></details>
+</div></section>
+
+<section class="demo" id="demo"><div class="wrap">
+  <div>
+    <span class="tag">GET STARTED</span>
+    <h2>Start your free month, or see a demo first.</h2>
+    <p class="lead">Tell us about your team and pick a plan. We'll set up your workspace, or a 30-minute demo, within one business day.</p>
+    <ul><li>A walkthrough built around your use case</li><li>Bring a document: we'll turn it into a guide live</li><li>Plans and setup options for your team</li></ul>
+  </div>
+  <form id="demoForm" novalidate>
+    <label>Your name<input name="name" id="f-name" required autocomplete="name"></label>
+    <label>Work email<input name="email" id="f-email" type="email" required autocomplete="email"></label>
+    <label>Company<input name="company" id="f-company" autocomplete="organization"></label>
+    <label>Phone (optional)<input name="phone" id="f-phone" type="tel" autocomplete="tel"></label>
+    <label>Team size<select name="teamSize" id="f-size"><option value="">Choose…</option><option>1–10</option><option>11–50</option><option>51–250</option><option>251–1000</option><option>1000+</option></select></label>
+    <label>Plan<select name="plan" id="f-plan"><option value="">Not sure yet</option><option value="basic">Basic</option><option value="team">Team</option><option value="business">Business</option><option value="enterprise">Enterprise</option></select></label>
+    <label>Main use<select name="useCase" id="f-use"><option value="">Choose…</option><option>Onboarding</option><option>Field service</option><option>Commissioning</option><option>Manufacturing</option><option>Quality checks</option><option>Healthcare admin</option><option>Finance</option><option>Customer support</option><option>IT &amp; software</option><option>Compliance</option><option>Other</option></select></label>
+    <label class="full">Anything we should know? (optional)<textarea name="message" id="f-msg" rows="3"></textarea></label>
+    <div class="hp" aria-hidden="true"><label>Website<input name="website" id="f-web" tabindex="-1" autocomplete="off"></label></div>
+    <button class="btn dark lg full" type="submit">Prepare my request</button>
+    <p class="msg" id="demoMsg" role="status"></p>
+    <p class="full" style="margin:0;font-size:13px;color:var(--muted)">We use these details only to contact you about Wise Guides. Prefer to write directly? Email <b style="user-select:all">andrew@wiseguidesusa.com</b>.</p>
+  </form>
+</div></section>
+</main>
+
+<!-- Slogan ticker -->
+<div class="ticker" aria-hidden="true"><div class="track">
+  <span>Show it once</span><span>Guides that talk</span><span>Learn by doing</span><span>Any document, instant SOP</span><span>Sign-off built in</span><span>Your data, your server</span>
+  <span>Show it once</span><span>Guides that talk</span><span>Learn by doing</span><span>Any document, instant SOP</span><span>Sign-off built in</span><span>Your data, your server</span>
+</div></div>
+
+<footer><div class="wrap">
+  <a class="logo" href="#main" style="font-size:17px"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiB2aWV3Qm94PSIwIDAgMTI4IDEyOCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJXaXNlIEd1aWRlcyI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9IndnLWJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjN0I1Q0ZGIi8+PHN0b3Agb2Zmc2V0PSIuNTUiIHN0b3AtY29sb3I9IiM0QjJGRDYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMyMzE0NkUiLz48L2xpbmVhckdyYWRpZW50PgogICAgPHJhZGlhbEdyYWRpZW50IGlkPSJ3Zy1zaGluZSIgY3g9Ii4yNSIgY3k9Ii4xNSIgcj0iLjgiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2ZmZiIgc3RvcC1vcGFjaXR5PSIuMjgiLz48c3RvcCBvZmZzZXQ9Ii42IiBzdG9wLWNvbG9yPSIjZmZmIiBzdG9wLW9wYWNpdHk9IjAiLz48L3JhZGlhbEdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJ3Zy1nb2xkIiB4MT0iMCIgeTE9IjAiIHgyPSIwIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjRkZFMDhBIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjRkZCMDIwIi8+PC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3QgeD0iNCIgeT0iNCIgd2lkdGg9IjEyMCIgaGVpZ2h0PSIxMjAiIHJ4PSIzMiIgZmlsbD0idXJsKCN3Zy1iZykiLz4KICA8cmVjdCB4PSI0IiB5PSI0IiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgcng9IjMyIiBmaWxsPSJ1cmwoI3dnLXNoaW5lKSIvPgogIDxwYXRoIGQ9Ik0yNCA0NiBMNDIgOTQgTDY0IDU4IEw4NiA5NCBMOTguNiA1My41IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMTUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgogIDxwYXRoIGQ9Ik0xMDYuNSAyOSBMMTEyLjYgNTUuOCBMODYuNiA0Ny42IFoiIGZpbGw9IiNmZmYiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CiAgPHBhdGggZD0iTTY0IDE4IEM2NS41IDI3IDY3IDI4LjUgNzYgMzAgQzY3IDMxLjUgNjUuNSAzMyA2NCA0MiBDNjIuNSAzMyA2MSAzMS41IDUyIDMwIEM2MSAyOC41IDYyLjUgMjcgNjQgMTggWiIgZmlsbD0idXJsKCN3Zy1nb2xkKSIvPgo8L3N2Zz4K" alt="" style="width:28px;height:28px">Wise Guides</a>
+  <nav aria-label="Footer"><a href="#demo">Book a demo</a><span>Terms and privacy policy available on request</span></nav>
+  <span>© <span id="yr">2026</span> Wise Guides. All rights reserved.</span>
+</div></footer>
+<script>window.WG_PLANS = {
+ "trialDays": 30,
+ "annualDiscount": 0.2,
+ "plans": [
+  {
+   "id": "basic",
+   "name": "Basic",
+   "monthly": 5.99,
+   "annual": 57.5,
+   "blurb": "For small teams, technicians and installers starting their documentation.",
+   "features": [
+    {
+     "t": "Unlimited captures and guides",
+     "s": "yes"
+    },
+    {
+     "t": "Web capture (browser extension)",
+     "s": "yes"
+    },
+    {
+     "t": "Desktop capture: any desktop app, window or screen",
+     "s": "yes"
+    },
+    {
+     "t": "Editing tools: rewrite steps, tips, warnings, picture markup",
+     "s": "yes"
+    },
+    {
+     "t": "Export to PDF and web page (HTML)",
+     "s": "yes"
+    },
+    {
+     "t": "Shareable links",
+     "s": "yes"
+    },
+    {
+     "t": "Document import (Word, PDF, PowerPoint, Excel, photos)",
+     "s": "yes"
+    },
+    {
+     "t": "Voice guidance and Guide Me walk-throughs",
+     "s": "yes"
+    },
+    {
+     "t": "Basic analytics: views and completion",
+     "s": "yes"
+    },
+    {
+     "t": "Single-team workspace",
+     "s": "yes"
+    },
+    {
+     "t": "Email support",
+     "s": "service"
+    }
+   ]
+  },
+  {
+   "id": "team",
+   "name": "Team",
+   "monthly": 9.99,
+   "annual": 95.9,
+   "popular": true,
+   "volume": 20,
+   "blurb": "For departments standardizing SOPs, commissioning and QA/QC documentation.",
+   "features": [
+    {
+     "t": "Everything in Basic",
+     "s": "yes"
+    },
+    {
+     "t": "Team workspace with reviewer and editor roles",
+     "s": "yes"
+    },
+    {
+     "t": "Reviews, tasks and read-and-sign sign-off",
+     "s": "yes"
+    },
+    {
+     "t": "Version history for every guide",
+     "s": "yes"
+    },
+    {
+     "t": "All exports: Word, PowerPoint, Excel, video, email",
+     "s": "yes"
+    },
+    {
+     "t": "QR codes for equipment",
+     "s": "yes"
+    },
+    {
+     "t": "Email notifications for tasks and reviews",
+     "s": "yes"
+    },
+    {
+     "t": "Slack and Microsoft Teams notifications",
+     "s": "yes"
+    },
+    {
+     "t": "Shared asset library",
+     "s": "yes"
+    },
+    {
+     "t": "Department-level reporting",
+     "s": "yes"
+    },
+    {
+     "t": "Custom branding (logo, colors)",
+     "s": "yes"
+    },
+    {
+     "t": "Priority email support",
+     "s": "service"
+    }
+   ]
+  },
+  {
+   "id": "business",
+   "name": "Business",
+   "monthly": 14.99,
+   "annual": 143.9,
+   "volume": 50,
+   "blurb": "For multi-site operations, field service and large commissioning teams.",
+   "features": [
+    {
+     "t": "Everything in Team",
+     "s": "yes"
+    },
+    {
+     "t": "Audit log of every action (changes, views, downloads and refusals)",
+     "s": "yes"
+    },
+    {
+     "t": "Sign-off records export for compliance (CSV)",
+     "s": "yes"
+    },
+    {
+     "t": "Hosted for you, or on your own servers",
+     "s": "yes"
+    },
+    {
+     "t": "Multi-site hierarchy (region → site → team)",
+     "s": "yes"
+    },
+    {
+     "t": "Cross-site analytics and benchmarking",
+     "s": "yes"
+    },
+    {
+     "t": "Custom commissioning workflows (multi-stage approvals)",
+     "s": "yes"
+    },
+    {
+     "t": "API write access and webhooks",
+     "s": "yes"
+    },
+    {
+     "t": "Single sign-on (Okta, Azure AD / Entra ID, any OpenID Connect)",
+     "s": "yes"
+    },
+    {
+     "t": "Offline mode for field technicians",
+     "s": "yes"
+    },
+    {
+     "t": "Vendor task automation rules",
+     "s": "yes"
+    },
+    {
+     "t": "Dedicated onboarding",
+     "s": "service"
+    },
+    {
+     "t": "Priority support (2-hour response)",
+     "s": "service"
+    }
+   ]
+  },
+  {
+   "id": "enterprise",
+   "name": "Enterprise",
+   "monthly": null,
+   "annual": null,
+   "blurb": "For large, regulated organizations with strict compliance and governance needs.",
+   "features": [
+    {
+     "t": "Everything in Business",
+     "s": "yes"
+    },
+    {
+     "t": "On-premises or private-cloud deployment",
+     "s": "yes"
+    },
+    {
+     "t": "Unlimited seats",
+     "s": "yes"
+    },
+    {
+     "t": "Compliance modules (ISO 9001/45001, NERC CIP, OSHA 1910, NFPA 70E, FDA 21 CFR 11/211/820) with re-sign-off tracking",
+     "s": "yes"
+    },
+    {
+     "t": "Advanced role controls (restricted sites, export and sharing permissions) and multi-site administration",
+     "s": "yes"
+    },
+    {
+     "t": "Full audit-trail export",
+     "s": "yes"
+    },
+    {
+     "t": "Custom data-retention policies",
+     "s": "yes"
+    },
+    {
+     "t": "ERP, MES and SCADA integrations (SAP PM, IBM Maximo, Ignition, MES)",
+     "s": "yes"
+    },
+    {
+     "t": "Multi-region failover (automatic warm standby)",
+     "s": "yes"
+    },
+    {
+     "t": "Encryption at rest (files, documents, backups and replicas) and governance controls",
+     "s": "yes"
+    },
+    {
+     "t": "Custom SLA",
+     "s": "service"
+    },
+    {
+     "t": "Dedicated success engineer and account manager",
+     "s": "service"
+    },
+    {
+     "t": "24/7 support",
+     "s": "service"
+    }
+   ]
+  }
+ ]
+};
+// Showcase tabs, audience tabs, and the demo-request form (posts to Wise Guides Control).
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+const SHOTS = {
+  record: ['Recording a task: each click becomes a numbered step', 'Do the task once. Every click becomes a numbered step with a screenshot and the exact button highlighted.'],
+  import: ['Documents turning into a step-by-step guide', 'Drop in Word, PDF, PowerPoint, Excel or photos. Pictures land on the right step, and Korean becomes English.'],
+  livefill: ['A form being filled in while the guide writes itself', 'Filling in a form? Live fill writes field-by-field guidance as you go.'],
+  guideme: ['Guide Me highlighting the next field on a web form', 'Guide Me walks people through the task on the real page, one highlight at a time.'],
+  voice: ['A guide playing with voice, and export options', 'Guides that talk in natural voices, shared as PDF, video, a link or a QR code.'],
+  team: ['Manager dashboard with sign-offs and tasks', 'Assign guides, collect read-and-sign records, and see who is ready.'],
+};
+const tabsIn = (root, attr, show) => {
+  const tabs = [...root.querySelectorAll(`[${attr}]`)];
+  const pick = (t) => { tabs.forEach((x) => x.setAttribute('aria-selected', String(x === t))); show(t.getAttribute(attr)); };
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => pick(t));
+    t.addEventListener('keydown', (e) => {
+      const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (d) { const n = tabs[(i + d + tabs.length) % tabs.length]; n.focus(); pick(n); }
+    });
+  });
+};
+const showcase = document.getElementById('showcase');
+if (showcase) {
+  const img = document.getElementById('shotImg'), cap = document.getElementById('shotCap');
+  const base = img.getAttribute('src').replace(/[^/]+$/, '');
+  tabsIn(showcase, 'data-shot', (k) => { img.src = `${base}${k}.jpg`; img.alt = SHOTS[k][0]; cap.textContent = SHOTS[k][1]; });
+}
+
+const AUD = [
+  ['Managers', 'Everyone does it the same way, and you can prove it.', ['Assign guides as tasks with due dates', 'Read-and-sign records for training and audits', 'See which guides are used and who has finished']],
+  ['Trainers', 'Build training once, and stop repeating yourself.', ['Record a task or import the manual you already have', 'Guides read themselves aloud in English or Korean', 'Guide Me lets people practise on the real system']],
+  ['Field teams', 'The right procedure, on the phone, at the equipment.', ['Scan a QR label to open the procedure', 'Pictures with the exact part highlighted', 'Tips and safety warnings right in the steps']],
+  ['IT & operations', 'Runs on your servers, fits your rules.', ['A private instance per customer, with HTTPS and daily backups', 'Roles, approvals and a full audit log', 'Personal details blurred before anything is saved']],
+];
+const audBody = document.getElementById('audBody');
+if (audBody) {
+  const show = (i) => {
+    const [, h, items] = AUD[+i];
+    audBody.innerHTML = `<div><h3></h3><p>Wise Guides gives you:</p></div><ul></ul>`;
+    audBody.querySelector('h3').textContent = h;
+    const ul = audBody.querySelector('ul');
+    for (const it of items) { const li = document.createElement('li'); li.textContent = it; ul.appendChild(li); }
+  };
+  tabsIn(document.querySelector('.aud'), 'data-aud', show);
+  show(0);
+}
+
+// Pricing, from plans.json (the same catalogue the app uses).
+const pricing = document.getElementById('pricing');
+if (pricing) {
+  const fmt = (n) => '$' + n.toFixed(2);
+  const esc = (s) => String(s).replace(/[&<>"]/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[ch]));
+  let data = window.WG_PLANS || null, cycle = 'monthly';
+  const draw = () => {
+    if (!data) return;
+    pricing.innerHTML = data.plans.map((p) => {
+      const per = p.monthly == null ? null : cycle === 'annual' ? p.annual / 12 : p.monthly;
+      return `<div class="plan${p.popular ? ' pop' : ''}">${p.popular ? '<span class="badge">Most popular</span>' : ''}<h3>${esc(p.name)}</h3>
+        <div class="price">${per == null ? 'Custom' : `${fmt(per)}<small> /seat/mo</small>`}</div>
+        <p class="per">${per == null ? 'Enterprise agreement' : cycle === 'annual' ? `${fmt(p.annual)} per seat, billed yearly` : 'Billed monthly · cancel anytime'}</p>
+        <p class="blurb">${esc(p.blurb)}</p>
+        <ul>${p.features.map((f) => `<li class="${f.s === 'soon' ? 'soon' : ''}"><span>${esc(f.t)}${f.s === 'soon' ? ' <span class="soon-tag">Coming soon</span>' : ''}</span></li>`).join('')}</ul>
+        <a class="btn ${p.popular ? 'dark' : 'light'}" href="#demo" data-plan="${p.id}">${p.monthly == null ? 'Talk to sales' : 'Start free month'}</a></div>`;
+    }).join('');
+    pricing.querySelectorAll('[data-plan]').forEach((el) => el.addEventListener('click', () => { const sel = document.getElementById('f-plan'); if (sel) sel.value = el.dataset.plan; }));
+  };
+  const setCycle = (v) => { cycle = v; document.getElementById('bill-m').setAttribute('aria-pressed', String(v === 'monthly')); document.getElementById('bill-a').setAttribute('aria-pressed', String(v === 'annual')); draw(); };
+  document.getElementById('bill-m').addEventListener('click', () => setCycle('monthly'));
+  document.getElementById('bill-a').addEventListener('click', () => setCycle('annual'));
+  if (data) draw();
+  else fetch('plans.json').then((r) => r.json()).then((d) => { data = d; draw(); }).catch(() => { pricing.innerHTML = '<p class="fine">Pricing didn\'t load. <a href="#demo">Ask us for a quote</a>.</p>'; });
+}
+
+// The demo form prepares an email to Wise Guides. The visitor sends it from their own email; nothing is sent from this page.
+const CONTACT = "andrew@wiseguidesusa.com";
+const form = document.getElementById('demoForm');
+const msg = document.getElementById('demoMsg');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const d = Object.fromEntries(new FormData(form));
+  msg.className = 'msg'; msg.textContent = '';
+  if (!String(d.name || '').trim()) { msg.className = 'msg err'; msg.textContent = 'Enter your name.'; form.elements.name.focus(); return; }
+  if (!/^\S+@\S+\.\S+$/.test(d.email || '')) { msg.className = 'msg err'; msg.textContent = 'Enter a valid work email, like you@company.com.'; form.elements.email.focus(); return; }
+  if (d.website) return;
+  const subject = 'Wise Guides demo request' + (d.company ? ' from ' + d.company : '');
+  const details = ['Name: ' + d.name, 'Email: ' + d.email, d.company && 'Company: ' + d.company, d.phone && 'Phone: ' + d.phone,
+    d.plan && 'Plan: ' + d.plan, d.teamSize && 'Team size: ' + d.teamSize, d.useCase && 'Main use: ' + d.useCase].filter(Boolean);
+  const text = ['Hello Wise Guides,', '', 'I would like a demo.', '', ...details, ...(d.message ? ['', d.message] : [])].join('\n');
+  let box = document.getElementById('prepared');
+  if (!box) { box = document.createElement('div'); box.id = 'prepared'; box.className = 'sent'; form.appendChild(box); }
+  box.innerHTML = '<b>Your request is ready. Send it to us by email:</b>'
+    + '<div class="row2">To: <span class="addr"></span><button type="button" class="btn light" id="copyAddr">Copy address</button></div>'
+    + '<pre id="reqText"></pre>'
+    + '<div class="row2"><button type="button" class="btn dark" id="copyReq">Copy request</button><a class="btn light" id="mailLink">Open in email app</a></div>'
+    + '<span style="font-size:13px;color:var(--muted)">Paste it into a new email to the address above. If the email-app button does nothing, copy and paste instead.</span>';
+  box.querySelector('.addr').textContent = CONTACT;
+  const full = 'Subject: ' + subject + '\n\n' + text;
+  box.querySelector('#reqText').textContent = full;
+  box.querySelector('#mailLink').href = 'mailto:' + CONTACT + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(text);
+  const copy = (value, btn, target) => async () => {
+    try { await navigator.clipboard.writeText(value); btn.textContent = 'Copied'; }
+    catch { const r = document.createRange(); r.selectNodeContents(target); getSelection().removeAllRanges(); getSelection().addRange(r); btn.textContent = 'Selected: press Ctrl+C'; }
+  };
+  box.querySelector('#copyAddr').onclick = copy(CONTACT, box.querySelector('#copyAddr'), box.querySelector('.addr'));
+  box.querySelector('#copyReq').onclick = copy(full, box.querySelector('#copyReq'), box.querySelector('#reqText'));
+  box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+});
+</script>
+</body>
+</html>
